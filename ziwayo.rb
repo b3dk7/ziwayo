@@ -1,16 +1,11 @@
-require 'json'
+#require 'json'
 require 'watir'
 require 'open-uri'
 require 'nokogiri'
-require 'pismo'
+#require 'pismo'
 require 'sanitize'
 
-
-xxtest_array = ['https://en.wikipedia.org/wiki/Dude', 'https://en.wikipedia.org/wiki/GitHub']
-
-xxtext = 'Sophos and Microsoft are really great companies that help defeat the wannacry virus. sophos is the best. brian is sophosticated'
-
-xxkeywords = ['sophos','microsoft']
+oops = 'oops, you seem to be missing arguments'
 
 #with_date d w m y
 
@@ -21,7 +16,7 @@ def get_links(location, pages_to_crawl, name_of_links_file)
   b.goto(location)
   for x in 0...pages_to_crawl
     for y in 1..10
-      puts y
+      #puts y
       link = b.link id: 'title_'+(x*10+y).to_s
       list_of_links.push(link.href)
     end
@@ -32,55 +27,30 @@ def get_links(location, pages_to_crawl, name_of_links_file)
   File.write(name_of_links_file, list_of_links)
 end
 
+#creates appropriate GET request
 def build_search_url(search,date)
   url = 'https://www.startpage.com/do/search?query='+search+'&with_date='+date
   return url
 end
 
-def text_from_link(link)
-  b = Watir::Browser.start link
-  return b.text
-end
 
-def down_html_from_links_selenium(links, keyword)
-  b = Watir::Browser.new :chrome
-  Dir.mkdir keyword unless Dir.exist?(keyword)
-  #b.start 'blank.html'
-  for i in 0...links.length
-    b.goto(links[i])
-    File.write(keyword+'/'+i.to_s+'.html', b.html)
-  end
-  
-end
+
 
 def down_html_from_links_open_uri(links, dir_name)
 
   Dir.mkdir dir_name unless Dir.exist?(dir_name)
 
   for i in 0...links.length
-    html_file = open(links[i]).read
+    html_file = "<!--"+links[i]+"-->\n" + open(links[i]).read
     File.write(dir_name+'/'+i.to_s+'.html', html_file)
     puts 'downloaded index'+i.to_s
   end
   
 end
 
-def create_link_and_text_array(links)
-  links_and_text_matrix=[]  
-  for i in 0...links.length
-    link_text_tuple=[2]
-    link_text_tuple[0]=links[i]
-    link_text_tuple[1] = text_from_link(links[i])
-    links_and_text_matrix.push(link_text_tuple)
-  end
-  return links_and_text_matrix
-end
-
 def occurrence_counter(string, substring)
   return string.scan(/(?=#{substring})/).count
 end
-
-
 
 def read_array_from_disk(path)
   return JSON.parse(File.open(path).read)
@@ -101,37 +71,39 @@ def create_seach_field(item_location)
   return search_string
 end
 
+def help()
+  puts ''
+  puts 'HELP DOCUMENT'
+  puts 'the options are:'
+  puts ' - download_links [your+search+terms] [number of links you want (must be multiple of 10)]'
+  puts ' - download_html [list of links]'
+  puts ' - search_dir [directory cointing html files to be searched]'
+end
 
 
-
-
-=begin
-COMMANDS
-
-  *	download_links
-  *	download_html
-  *	search_dir
+if ARGV[0] == '--help'
+  help()
   
-=end
-
-
-if ARGV[0] == 'download_links'
-  if ARGV[1].nil?
-    puts 'you need to provide a search term, e.g. "neo+matrix"'
+elsif ARGV[0] == 'download_links'
+  if ARGV[1].nil? || ARGV[2].nil?
+    puts oops
+    help()
   else
-    get_links(build_search_url(ARGV[1],''), 2, ARGV[1]+'.links')
+    get_links(build_search_url(ARGV[1],''), (Integer(ARGV[2])/10), ARGV[1]+'.links')
     puts 'links downloaded'
   end
 elsif ARGV[0] == 'download_html'
   if ARGV[1].nil?
-    puts 'please provide a list of links to be downloaded'
+    puts oops
+    help()
   else
     links_array = read_array_from_disk(ARGV[1])
     down_html_from_links_open_uri(links_array, ARGV[1].gsub('.links',''))
   end
 elsif ARGV[0] == 'search_dir'
   if ARGV[1].nil?
-    puts 'please provide a directory to be searched and the search terms'
+    puts oops
+    help()
   else
     text_dir_name = ARGV[1]+'.text'
     Dir.mkdir text_dir_name unless Dir.exist?(text_dir_name)
@@ -147,16 +119,15 @@ elsif ARGV[0] == 'search_dir'
       #puts item
       term = 'root9B'
       #regex to search for seperate word
-      counter_string = occurrence_counter(search_field.downcase,  /[\.\ \,\n\(\:]#{term}[\.\ \,\n\)\!\?]/).to_s
+      counter_string = occurrence_counter(search_field.downcase,  /[\ \n\(]#{term}[\.\ \,\n\)\!\?]/).to_s
       
       puts counter_string
     end
   end
-
-#doc = Nokogiri::HTML(open("http://www.threescompany.com/"))
+else
+  puts "you need to provide some arguments"
+  help()
 end
 
-
-#puts occurrence_counter("microsoft, microsoft and sophos and mmmmicrosoft microsoftttt", " microsoft ")
 
 
