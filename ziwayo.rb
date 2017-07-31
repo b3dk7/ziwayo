@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'sanitize'
 
 oops = 'oops, you seem to be missing arguments'
-
+#$matrix = []
 #with_date d w m y
 
 #returns an array of links to investigate
@@ -61,17 +61,16 @@ end
 
 # create steralized text including title meta data and body text that will be searched for given keyworks (like a list of companies)
 def create_seach_field(item_location)
+  
+  extract = ''
+  
   doc = Nokogiri::HTML(open(File.open(item_location)))
   doc.css('script').remove
-  meta = ''
-  search_string = ' ' + doc.css('title').text + "\n"
-  begin
-    meta = doc.css('meta[name=description]').attribute('content')
-  rescue
+  doc.css('p').each do |paragraph|
+    extract << paragraph.text.gsub('  ','').gsub("\n\n",'')
   end
-  search_string += meta
-  search_string += Sanitize.fragment(doc.css('body').text)
-  return search_string
+  
+  return extract
 end
 
 
@@ -100,18 +99,30 @@ def csv_to_array(csv)
   return array
 end
 
-#creating csv file contianing all occurances 
-def create_raw_csv(html_dir, list_of_companies)
+def array_to_csv(array)  
+  array.each { |line| puts line.join(',')+"\n" }
+end
+def extract_domain(url)
+  url = url.gsub('https://','').gsub('http://','')
+  url = url[0...url.index('/')]
+  url = url.gsub('www.','')
+  return url
+end
+def remove_spaces_downcase(name)
+  return name.gsub(' ','').downcase
+end
 
-    
-    
+=begin
+sanitize does the following
+ - only count single occurances of company names
+ - remove occurances of companies that are talking about themselves
+=end
+def create_matrix(html_dir, list_of_companies)
     array_of_companies = one_dimentionalize(csv_to_array(list_of_companies))
-    
     #printing first line of csv file
+    print html_dir
     array_of_companies.each { |x| print ","+x }
     print "\n"
-    
-    
     Dir.foreach(html_dir) do |item|
       #puts item
       next if item == '.' or item == '..'
@@ -126,8 +137,14 @@ def create_raw_csv(html_dir, list_of_companies)
       
       for i in 0 ... array_of_companies.size
 	term = array_of_companies[i].downcase
-	occurance_of_term = occurrence_counter(search_field.downcase,/[\t\r\ \n\(]#{term}[\.\ \,\n\)\!\?]/)
-	print "," + occurance_of_term.to_s
+	occurance_of_term = occurrence_counter(search_field.downcase,/[\t\r\ \n\(]#{term}[\-\'\.\ \,\n\)\!\?]/)
+	#remove occurances of companies that are talking about themselves
+	if extract_domain(link).include? remove_spaces_downcase(term)
+	  print ",0"
+	else
+	
+	  print "," + more_than_zero_is_one(occurance_of_term).to_s
+	end
       end
       
       print "\n"
@@ -143,24 +160,67 @@ end
 
 
 
-=begin
-sanitize does the following
- - remove companies that are not mentioned (NOT DONE)
- - only count single occurances of company names (NOT DONE)
- - remove occurances of companies that are talking about themselves (NOT DONE)
-=end
-# array[web_article][company]
-def sanitize_csv(csv)
-  two_d_array = csv_to_array(csv)
-  #iterating through web articles
-  for article in 1 ... two_d_array.size
-    #iterating through companies
-    for company in 1 ... two_d_array[0].size
-      two_d_array[article][company] =  more_than_zero_is_one(two_d_array[article][company].to_i)
+
+
+
+
+def sort_company_array(ca)
+  #[2, 1, 3].sort_by{ |i| -i }
+  return ca.sort_by{ |i| -i[1].size }
+end
+
+#company_array[company_num][company_name,[list_of_articles]]
+def create_html(csv)
+  
+  
+  company_array = []
+  matrix= csv_to_array(csv)
+  
+  for company in 1 ... matrix[0].size
+    list_of_articles = []
+    for article in 1 ... matrix.size
+      if matrix[article][company].to_i > 0
+	list_of_articles << matrix[article][0]
+      end
+    end
+    if list_of_articles.size > 0
+      tuple = []
+      tuple << matrix[0][company]
+      tuple << list_of_articles
+      
+      company_array << tuple
     end
   end
-  return two_d_array
+  
+  
+  company_array = sort_company_array(company_array)
+  
+  
+  html_file = File.open('html/output.html').read
+  pietable = ""
+  
+  for c in 0...company_array.size
+    pietable << '["' + company_array[c][0] + '",' + company_array[c][1].size.to_s + "],\n"
+  end
+  pietable = pietable[0...-2]
+  
+  
+  all_companies=matrix[0].join(', ')[2..-1]
+  all_articles =''
+  
+  matrix.each { |x| all_articles << x[0] }
+  
+  
+  #fill in pietable
+  html_file = html_file.sub('ziwayo{pie}',pietable)
+  #fill in list of all companies and articles
+  html_file = html_file.sub('ziwayo{all_companies}',all_companies)
+  html_file = html_file.sub('ziwayo{all_articles}',all_articles)
+  
+  puts html_file
+  
 end
+  
 
 def help()
   puts ''
@@ -168,8 +228,8 @@ def help()
   puts 'the options are:'
   puts ' - download_links [your+search+terms] [number of links you want (must be multiple of 10)]'
   puts ' - download_html [list of links] [destination directory]'
-  puts ' - create_raw_csv [directory cointing html files to be searched] [csv file containing companie names to search for]'
-  puts ' - sanitize_csv [raw csv]'
+  puts ' - create_matrix [directory cointing html files to be searched] [csv file containing companie names to search for]'
+  puts ' - create_html [matrix]'
 end
 
 
@@ -192,19 +252,22 @@ elsif ARGV[0] == 'download_html'
     links_array = csv_to_array(ARGV[1])
     down_html_from_links_open_uri(links_array, ARGV[2])
   end
-elsif ARGV[0] == 'create_raw_csv'
+elsif ARGV[0] == 'create_matrix'
   if ARGV[1].nil? || ARGV[2].nil?
     puts oops
     help()
   else
-    create_raw_csv(ARGV[1],ARGV[2])
+    
+    create_matrix(ARGV[1],ARGV[2])
+    
   end
-elsif ARGV[0] == 'sanitize_csv'
+
+elsif ARGV[0] == 'create_html'
   if ARGV[1].nil?
     puts oops
     help()
   else
-    print sanitize_csv(ARGV[1])
+    create_html(ARGV[1])
   end
 else
   puts "you need to provide some arguments"
