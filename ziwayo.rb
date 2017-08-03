@@ -205,10 +205,43 @@ def create_html(csv)
   pietable = pietable[0...-2]
   
   
-  all_companies=matrix[0].join(', ')[2..-1]
+  all_companies=matrix[0][1..-1].join(', ')
   all_articles =''
   
-  matrix.each { |x| all_articles << x[0] }
+  ##matrix.each { |x| all_articles << x[0] }
+  
+  
+  html_dir = matrix[0][0]
+  Dir.foreach(html_dir) do |item|
+    next if item == '.' or item == '..'
+    item_location = html_dir+'/'+item
+    
+    article = File.open(item_location)
+    
+    link = article.read.lines.first.gsub('<!--','').gsub('-->','').gsub("\n",'')
+    article_noko = Nokogiri::HTML(open(article))
+    
+    all_articles << '<a href='+link + '>'+article_noko.css('title').text+'</a><br>'
+  end
+  
+  
+  
+  ziwayo_references = ''
+  
+  
+  for i in 0...company_array.size
+    ziwayo_references << '<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">'+i.to_s+'. '+company_array[i][0]+' ('+company_array[i][1].size.to_s+' references)</a>
+	    </h4>
+	  </div>
+	  <div id="collapse7" class="panel-collapse collapse">
+	    <div class="panel-body">xxx</div>
+	  </div>
+	</div>'
+  end
+  
   
   
   #fill in pietable
@@ -217,7 +250,12 @@ def create_html(csv)
   html_file = html_file.sub('ziwayo{all_companies}',all_companies)
   html_file = html_file.sub('ziwayo{all_articles}',all_articles)
   
+  html_file = html_file.sub('ziwayo{references}',ziwayo_references)
+  
+  
+  
   puts html_file
+  #puts pietable
   
 end
   
