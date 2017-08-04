@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PUT TITLE HERE</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Company', 'number of articles'],
+          ["Symantec",17],
+["Kaspersky",17],
+["RSA",9],
+["Malwarebytes",6],
+["Avast",5],
+["IBM",4],
+["AlienVault",4],
+["FireEye",4],
+["Bitdefender",4],
+["Cisco",4],
+["Proofpoint",3],
+["ESET",2],
+["Anomali",2],
+["SecureWorks",2],
+["Lookout",2],
+["Oracle",2],
+["Digital Shadows",2],
+["Qihoo 360",2],
+["Avanan",1],
+["F-Secure",1],
+["Juniper Networks",1],
+["Bromium",1],
+["Tenable Network Security",1],
+["Comodo",1],
+["BitSight",1],
+["Check Point Software",1],
+["Recorded Future",1],
+["Infoblox",1],
+["Ivanti",1],
+["Trend Micro",1],
+["Varonis",1],
+["Citrix",1],
+["Cyence",1]
+
+          
+        ]);
+
+        var options = {
+          title: 'Number of times a particular company was referenced'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+    <div class="container">
+      <h1>Trend analysis for the keyword "WannaCry"</h1>
+      <h2>Summary</h2>
+      <div id="piechart" style="width: 900px; height: 500px;"></div>
+      
+      
+      <h2>Coverage of the web crawler</h2>
+      <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">List of companies searched for</a>
+	    </h4>
+	  </div>
+	  <div id="collapse1" class="panel-collapse collapse">
+	    <div class="panel-body">root9B, Herjavec, Raytheon, EY, Mimecast, KnowBe4, IBM, Cisco, Sera-Brynn, Sophos, Clearwater, CyberArk, Lockheed Martin, Forcepoint, Thycotic, Digital Defense, Rapid7, BAE Systems, DFLabs, FireEye, Palo Alto Networks, Booz Allen, Code Dx, Nexusguard, Proofpoint, Symantec, RSA, Kaspersky, BT, Deloitte, Trend Micro, PwC, Ziften, BlackBerry, Check Point Software, Carbon Black, Checkmarx, Tenable Network Security, Threat Stack, i-Sprint Innovations, Intel Security Group, SecureWorks, Fortinet, Imperva, AT&T Network Security, Northrop Grumman, AlienVault, SAS Institute, HackerOne, Inspired eLearning, Accenture, Splunk, Gigamon, NNT, L-3, Tanium, KPMG, Veracode, Guidance Software, Corero, ManageEngine, SonicWall, Palantir, Qualys, Verizon, Webroot, Pindrop, Kroll, Tripwire, Imprivata, F-Secure, SnoopWall, OneLogin, VMware, Cimcor, Akamai, Illumio, Radware, Black Duck, A10 Networks, Leidos, Level 3, MobileIron, HPE, Avast, Malwarebytes, Pwnie Express, Illusive Networks, SentryBay, SparkCognition, Darktrace, Bay Dynamics, PhishMe, Arbor Networks, CYREN, Unisys, PKWARE, Cato Networks, Digital Guardian, Claroty, CSC, Bwise, F5, AhnLab, Gemalto, EverCompliant, Mitnick Security, Zscaler, Core Security, Fidelis Cybersecurity, Fireglass, Optiv, NetIQ, Avanan, DigiCert, aurionPro, CACI, RiskVision, NXT-ID, Globalscape, Arxan, Entrust, AIRBUS Cybersecurity, NowSecure, Qihoo 360, Evident, Digital Shadows, Prevalent Networks, Cybereason, VASCO Data Security, Oracle, Bitdefender, Signifyd, Thales, Juniper Networks, ZeroFOX, Exabeam, Bromium, DBAPPSecurity, CA Technologies, DomainTools, Immuniweb, KEYW, Ixia, Digital Arts, Skybox Security, Cryptzone, Absolute, Haystax, Menlo, Venafi, Endgame, Anomali, LookingGlass, Trustwave, LifeLock, Duo Security, CrowdStrike, Comodo, Skyhigh Networks, ThreatConnect, Barracuda Networks, ZixCorp, Cylance, Shape Security, SAIC, Mitek, Centrify, Securonix, Twistlock, Proficio, NCC Group, Siemens, Osirium, Continuum GRC, RiskSense, AttackIQ, StrongAuth, Daon, CounterTack, Bugcrowd, SecureKey, ForeScout, TowerSec, DB Networks, NetScout, ThreatQuotient, Zenedge, Clearswift, Siemplify, BitSight, Brainloop, ESET, WhiteHat Security, Coalfire, ENCODE, TrapX Security, White Ops, Vectra Networks, Skycure, Appthority, RiskIQ, Resolver, SafeBreach, NTT Security, vArmour, Okta, Untangle, Phantom, Harris, IronNet Cybersecurity, Recorded Future, Axway, Netskope, VeriSign, Protenus, Infoblox, General Dynamics, ValiMail, Synack, SentinelOne, Socure, Bayshore Networks, Baffle, PhishLabs, enSilo, Contrast Security, Druva, ThreatMetrix, Bitglass, Rsam, HID Global, Cellebrite, Dataguise, TrustedSec, Zimperium, GreyCastle Security, Distil Networks, WatchGuard, Veracity, Precise Biometrics AB, SaltDNA, Star Lab, Clavister, Radiant Logic, Mojo Networks, Cyberbit, Observable Networks, MetricStream, Lynx Software Technologies, LogRhythm, ePlus Security, Easy Solutions, Intralinks, SailPoint, Becrypt, SecurityScorecard, Upguard, Argus Cyber Security, Ivanti, TrustedKnight, AnchorFree, Ridge-Schmidt Cyber, Veriato, Agari, eSentire, Uplevel Security, RedSeal, Spirion, Cyphort, Guardian Analytics, CloudPassage, GlobalSign, Keypasco, Flexera Software, FireMon, HyTrust, Infocyte, TeleSign, VirtualArmour, Morphick, N-Dimension, Rogue Wave Software, Lieberman Software, Sixgill, Stroz Friedberg, The Chertoff Group, MicroStrategy, Future Tense Central, Denim Group, Good Harbor, Ping Identity, Swimlane, Smoothwall, Anodot, SECDO, OPSWAT, Masergy, Praetorian, Phirelight, Wombat Security, IRONSCALES, Netwrix, Interset, Bradford Networks, MindPoint Group, Innové, Vaultive, Sungard AS, LIFARS, Israel Aerospace Industries, Avecto, Panda Security, E8 Security, ForgeRock, Entersekt, SecureMySocial, HanSight, CloudFlare, Centripetal, PrimeKey Solutions, Code42, Trusona, Lookout, Nehemiah Security, GuardiCore, lastline, BIOWATCH, Alert Logic, BSI Cybersecurity, Behaviosec, wolfSSL, Varonis, ESNC, Elastic, Kenna, GuruCul, NexDefense, ERPScan, Virtual Forge, Assured Enterprises, TRUSTe, Hillstone Networks, DeviceLock, QuadMetrics, Virgil Security, GFI, Acunetix, Reservoir Labs, Accellion, Virtru, PortSwigger, Sword & Shield, Mocana, Onapsis, GrammaTech, Nozomi Networks, VMRay, QuintessenceLabs, HYPR, SEWORKS, Cybric, AllClear ID, Factom, BlackStratus, Biocatch, SecuredTouch, Fingerprint Cards AB, SimplifIDed, SecureStrux, Quick Heal Technologies, Fox Technologies, SecureAuth, Panopticon Labs, Prot-On, Citrix, INSIDE Secure, SDS, BeyondTrust, Red Canary, Cyence, GM Security Technologies, Tufin, Sonatype, Silverskin, Votiro, RedOwl, Quann, Saviynt, SSH Communications, CyFIR, Sure ID, Link11, EdgeWave, Savvius, Fhoosh, Avira, neXus, Balabit, Protegrity, Nexthink, MailControl, BlueCat, Tapestry Technologies, Waterfall, CyberX, Sqrrl, Nok Nok Labs, DriveLock SE, LockPath, Eclectic IQ, Ionic Security, Wetstone Technologies, AlgoSec, InteliSecure, Bastille Networks, Paladion, MedCrypt, Paraben, FFRI, Qosmos, Wallarm, Indegy, Silent Circle, Ntrepid, ThetaRay, Blueliv, Verodin, Oberthur Technologies, Senrio, QuintiQ, Saint Corporation, SecuAvail, CoroNet, Dragos Security, Wickr, Novetta, Appdome, Promisec, Bio-key, Linoma Software, Magnet Forensics, Trustlook, Auth0, Rubicon Labs, Secure Digital Solutions, Cronus Cyber Technologies, Security Compass, Finjan Holdings, MPrest, GreatHorn, Spam Titan, Security Innovation, Sentryo, Lexumo, Transmit Security, Mosaic 451, Fasoo, GuidePoint Security, Vanguard Integrity Professionals, Bomgar, SecureRF, Risk Based Security, NSFOCUS, Swivel Secure, Verint, SurfWatch Labs, CipherCloud, PulseSecure, Antiy Labs, Cobalt Labs, INFOSIGHT, Skyport Systems, Syncplicity, Rohde & Schwarz Cybersecurity, Sangfor, CBI, Synopsys, GigaTrust, Cyber adAPT, EastWind Networks, Apperion, Sumo Logic, WinMagic, BankVault, Tempered Networks, Berkeley Varitronics Systems, Hortonworks, Seclore, Wandera, Cymmetria, Forum Systems, Kudelski Security, iboss, Fortscale, NetFort, Vkansee, Cryptomathic</div>
+	  </div>
+	</div>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">List of articles analysed</a>
+	    </h4>
+	  </div>
+	  <div id="collapse2" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://edition.cnn.com/2017/05/14/opinions/wannacrypt-attack-should-make-us-wanna-cry-about-vulnerability-urbelis/>WannaCrypt attack should make us wanna cry about our vulnerability (Opinion) - CNN.com</a><br><a href=https://www.bitdefender.com/box/blog/smart-home/bitdefenders-advanced-detection-technologies-blocked-wannacry-beginning/>WannaCry ransomware: Bitdefender technologies blocked it from the very beginning!</a><br><a href=https://www.pcmag.com/article/353670/wannacry-ransomware-what-you-need-to-know>WannaCry Ransomware: What You Need to Know | PCMag.comPCMagLogo.2016Nav_AssetsArrow_Path</a><br><a href=https://f5.com/labs/articles/threat-intelligence/malware/from-nsa-exploit-to-widespread-ransomware-wannacry-is-on-the-loose-26847>
+	From NSA Exploit to Widespread Ransomware: WannaCry is on the Loose
+</a><br><a href=http://knowledge.wharton.upenn.edu/article/massive-global-cyberattack/>How the WannaCry Attack Will Impact Cyber Security - Knowledge@Wharton</a><br><a href=https://www.symantec.com/connect/blogs/what-you-need-know-about-wannacry-ransomware>What you need to know about the WannaCry Ransomware | Symantec Connectlogo-symantec-dark-source</a><br><a href=https://blogs.forcepoint.com/security-labs/wannacry-post-outbreak-analysis>WannaCry Post-Outbreak Analysis | Forcepoint</a><br><a href=https://www.clickatell.com/articles/information-security/wannacry-ransomware-attack/>WannaCry Ransomware Attack – Everything You Need to Know | Clickatell</a><br><a href=https://www.thesun.co.uk/tech/3562470/wannacry-ransomware-nhs-cyber-attack-hackers/>What is Wannacry ransomware? Hackers offer to sell malware used to cripple NHS in cyber attack</a><br><a href=https://securelist.com/blog/incidents/78351/wannacry-ransomware-used-in-widespread-attacks-all-over-the-world/>WannaCry ransomware used in widespread attacks all over the world - Securelist</a><br><a href=https://www.tenable.com/wannacry>WannaCry | Tenable™FacebookGoogle PlusTwitterLinkedInYouTubeRSSMenuSearch</a><br><a href=http://gadgets.ndtv.com/internet/news/wannacry-ransomware-india-cyber-attacks-virus-patch-1693575>What Is WannaCry, Who Is Affected, and Everything Else You Need to Know About It | Technology News</a><br><a href=https://www.sophos.com/en-us/lp/wanna-ransomware-outbreak-how-to-stay-protected.aspx>
+	"WannaCry" Ransomware: What You Need to Know to Stay Protected
+</a><br><a href=https://answers.microsoft.com/en-us/windows/forum/windows_10-security/wanna-cry-ransomware/5afdb045-8f36-4f55-a992-53398d21ed07>Wanna Cry Ransomware : Update 5/21/2017 FIX - Microsoft Community</a><br><a href=http://www.techworld.com/security/what-is-wannacry-how-does-wannacry-ransomware-work-3659064/>WannaCry explained: What is WannaCry ransomware and how does it work? | Security | Techworld</a><br><a href=https://www.zscaler.com/blogs/research/wannacry-20-ransomware-attacks-continue>
+    WannaCry 2.0 Ransomware Attacks Continue | Zscaler Blog  </a><br><a href=http://www.networkworld.com/article/3198985/malware-cybercrime/nothing-new-to-wannacry-about.html>Nothing new to (Wanna)Cry about | Network World</a><br><a href=https://arstechnica.com/security/2017/07/samba-puts-out-new-security-update-to-address-exploit-that-fueled-wannacry/>July | 2017 | Ars Technica</a><br><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=https://mybroadband.co.za/news/security/217282-petya-the-new-wannacry-arrives-in-south-africa.html>Petya – the new WannaCry – arrives in South Africa</a><br><a href=https://www.zyxel.com/support/ci_general_20170516_927496.shtml>Guard against WannaCry ransomware | Zyxel</a><br><a href=https://www.us-cert.gov/ncas/alerts/TA17-132A>Indicators Associated With WannaCry Ransomware</a><br><a href=http://www.nbcnews.com/storyline/hacking-of-america/blockbuster-wannacry-malware-could-just-be-getting-started-experts-n759356>'WannaCry' Malware Attack Could Just Be Getting Started: Experts - NBC News</a><br><a href=http://www.news24.com/Tags/Topics/wannacry>
+	wannacry on News24
+</a><br><a href=https://www.forbes.com/sites/thomasbrewster/2017/06/27/petya-notpetya-ransomware-is-more-powerful-than-wannacry/>Petya Or NotPetya: Why The Latest Ransomware Is Deadlier Than WannaCry</a><br><a href=http://www.techrepublic.com/article/wannacry-the-smart-persons-guide/>WannaCry: The smart person's guide - TechRepublic</a><br><a href=http://economictimes.indiatimes.com/tech/internet/hackers-wannacry-cyber-cops-are-here-to-track-you/articleshow/59588219.cms>cyber attacks: Hackers wannacry? Cyber cops are here to track you</a><br><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br><a href=http://www.bbc.com/news/technology-39920141>WannaCry ransomware cyber-attacks slow but fears remain - BBC NewsBBC News</a><br><a href=https://safeandsavvy.f-secure.com/2017/05/12/wannacry-may-be-the-biggest-cyber-outbreak-since-conficker/>WannaCry, the Biggest Ransomware Outbreak Ever – Safe and Savvy Blog by F-SecureF-SecureBurgerYouTubeFacebookTwiiterF-Secure</a><br><a href=https://www.proofpoint.com/us/corporate-blog/post/wannacry-ransomware-hits-multiple-countries-proofpoint-reduces-threat>Worldwide WannaCry Ransomware Attack Hits 99+ Countries, Proofpoint Researchers Significantly Reduce Impact | Proofpoint</a><br><a href=https://www.theguardian.com/technology/2017/jun/16/wannacry-ransomware-attack-linked-north-korea-lazarus-group>WannaCry ransomware attack 'linked to North Korea' | Technology | The Guardian</a><br><a href=http://ewn.co.za/2017/05/23/wannacry-caused-panic-but-didn-t-make-much-money-why>WannaCry caused panic, but didn't make much money. Why?</a><br><a href=https://www.youtube.com/watch?v=etPizFNPupk>Why Was the WannaCry Attack Such a Big Deal? - YouTube</a><br><a href=https://www.acronis.com/en-us/blog/posts/ransomware-just-became-global-pandemic-only-acronis-has-vaccine>WannaCry Ransomware Just Became a Global Pandemic - Only Acronis Has the Vaccine</a><br><a href=https://blog.sonicwall.com/2017/05/sonicwall-protects-customers-latest-massive-wannacry-ransomware-attack/>SonicWall Protects Customers from the Latest Massive WannaCry Ransomware Attack</a><br><a href=http://www.fin24.com/Tech/News/cybersleuths-unearth-more-clues-on-wannacry-origin-20170523>
+	Cybersleuths unearth more clues on WannaCry origin | Fin24
+</a><br><a href=https://www.recordedfuture.com/wannacry-ransomware-analysis/>What Is WannaCry? Analyzing the Global Ransomware Attack</a><br><a href=https://www.gdatasoftware.com/blog/2017/05/29751-wannacry-ransomware-campaign>Warning: Massive "WannaCry" Ransomware campaign launched | G DATA</a><br><a href=https://www.washingtonpost.com/world/national-security/the-nsa-has-linked-the-wannacry-computer-worm-to-north-korea/2017/06/14/101395a2-508e-11e7-be25-3a519335381c_story.html>The NSA has linked the WannaCry computer worm to North Korea - The Washington Post</a><br><a href=https://www.ft.com/content/af74e3f4-373d-11e7-99bd-13beb0903fa3>Subscribe to read</a><br><a href=https://developers.redhat.com/blog/2017/05/19/wannacry-ransomware-who-it-affected-and-why-it-matters/>WannaCry Ransomware: Who It Affected and Why It Matters – RHD Blog</a><br><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br><a href=https://www.technologyreview.com/s/607895/wannacry-has-a-more-lucrative-cousin-that-mines-cryptocurrency-for-its-masters/>WannaCry Has a More Lucrative Cousin That Mines Cryptocurrency for Its Masters - MIT Technology Review</a><br><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br><a href=https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/>An Analysis of the WannaCry Ransomware Outbreak | McAfee Blogs</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://www.cnbc.com/2017/05/15/ransomware-wanncry-virus-what-to-do-to-protect.html>WannaCry ransomware cyberattack: How to tell if you're at risk</a><br><a href=http://fortune.com/2017/05/23/north-korea-wannacry-ransomware-symantec/>Experts: 'Highly Likely' North Korea Behind WannaCry Ransomware Attack | Fortune.com</a><br><a href=http://www.ey.com/gl/en/services/advisory/ey-wannacry-ransomware-attack>EY - WannaCry ransomware attack - EY - Global</a><br><a href=https://blog.fortinet.com/2017/06/27/new-ransomware-follows-wannacry-exploits>New Ransomworm Follows WannaCry Exploits  | Fortinet Blog</a><br><a href=https://www.webroot.com/blog/2017/05/13/wannacry-ransomware-webroot/>
+WannaCry Ransomware: Webroot protects you</a><br><a href=https://www.citrix.com/blogs/2017/05/16/wannacry-why-citrix-customers-are-not-crying-today/>WannaCry: Why Citrix Customers Are Not Crying Today | Citrix Blogs</a><br><a href=https://www.ahsay.com/blog/2017/05/22/7-facts-about-wannacry-ransomware/>7 Facts about WannaCry ransomware – Ahsay's Blog</a><br><a href=https://blog.comae.io/wannacry-new-variants-detected-b8908fefea7e>WannaCry — New Variants Detected! – Comae Technologies</a><br><a href=https://support.norton.com/sp/en/ie/home/current/solutions/v122151116_EndUserProfile_en_us>What is WannaCry ransomware and how to protect your computer?</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=http://nymag.com/selectall/2017/05/the-lesson-we-should-learn-from-wannacry.html>The Lesson We Should Learn From WannaCryFacebook iconTwitter iconLinkedIn iconGoogle Plus iconEmail iconComment iconPrint icon</a><br><a href=https://blog.malwarebytes.com/cybercrime/2017/05/how-did-wannacry-ransomworm-spread/>
+
+How did the WannaCry ransomworm spread? - Malwarebytes Labs | Malwarebytes Labs  </a><br><a href=http://www.reuters.com/article/us-honda-cyberattack-idUSKBN19C0EI>Honda halts Japan car plant after WannaCry virus hits computer network | Reuters</a><br><a href=http://thehackernews.com/2017/05/how-to-wannacry-ransomware.html>WannaCry Ransomware: Everything You Need To Know Immediately</a><br><a href=https://mg.co.za/article/2017-05-19-00-data-loss-will-make-you-wanna-cry>Data loss will make you wanna cry | Business | M&G</a><br><a href=https://forums.juniper.net/t5/Security-Now/Rapid-Response-The-WannaCry-Ransomware-Outbreak/ba-p/307835>Rapid Response: WannaCry Ransomware Outbreak | Juniper Networks</a><br><a href=https://blog.checkpoint.com/2017/05/12/global-outbreak-wanacryptor/>Global Outbreak of WannaCry | Check Point Blog</a><br><a href=https://www.wordfence.com/blog/2017/05/how-to-protect-yourself-against-wannacry/>New WannaCry Ransomware and How to Protect Yourself</a><br><a href=https://www.demisto.com/wannacry-ransomware-incident-response-playbook/>WannaCry Ransomware - Incident Response Playbook - Demisto</a><br><a href=http://www.zdnet.com/article/wannacry-why-its-ransomware-that-just-wont-die/>WannaCry: Why this ransomware just won't die | ZDNet</a><br><a href=https://www.troyhunt.com/everything-you-need-to-know-about-the-wannacrypt-ransomware/>Troy Hunt: Everything you need to know about the WannaCry / Wcry / WannaCrypt ransomware</a><br><a href=https://www.scmagazine.com/a-quarter-of-enterprises-worldwide-affected-by-wannacry-or-fireball-check-point-report/article/670259/>A quarter of enterprises worldwide affected by Wannacry or Fireball, Check Point report</a><br><a href=http://blog.talosintelligence.com/2017/05/wannacry.html>Cisco's Talos Intelligence Group Blog: Player 3 Has Entered the Game: Say Hello to 'WannaCry'</a><br><a href=https://www.performanta.co.za/can-north-korea-linked-wannacry-timestamp-analysis/>Can North Korea be Linked to WannaCry? A Timestamp Analysis - Performanta</a><br><a href=http://www.computerworlduk.com/security/what-is-wannacry-what-does-wannacry-ransomware-do-3659053/>What is WannaCry? What does WannaCry ransomware do? | Security | Computerworld UK</a><br><a href=https://www.bluecatnetworks.com/blog/2017/05/17/dns-helped-stop-wannacry-ransomware-attack/>
+			How DNS Helped Stop the “WannaCry” Ransomware Attack - BlueCat		</a><br><a href=https://www.economist.com/news/science-and-technology/21722158-it-has-been-neglected-too-long-wannacry-should-make-people-treat-cyber-crime>WannaCry should make people treat cyber-crime seriouslyclose iconthe economistdown icondown iconuser icondown iconmagnifier iconhamburger iconclose iconup iconup iconup iconprint-edition icontwitter iconfacebook iconlinkedin iconmail iconprint icontwitter iconfacebook iconlinkedin iconmail iconprint iconfacebook icontwitter icongoogleplus iconlinkedin icontumblr iconinstagram iconyoutube iconrss iconmail icon</a><br><a href=https://techcrunch.com/2017/05/15/wannacry-ransomware-is-still-spreading-fast-but-kill-switch-defenses-hold-for-now/>WannaCry ransomware is still spreading fast, but ‘kill switch’ defenses hold for now  |  TechCrunch</a><br><a href=https://securityintelligence.com/lessons-learned-from-the-wannacry-ransomware-attack-and-many-others-that-preceded-it/>Lessons Learned From the WannaCry Ransomware Attack and Many Others That Preceded It</a><br><a href=https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/wannacry-wcry-ransomware-what-your-it-sysadmins-need-to-do>
+	WannaCry/Wcry Ransomware: What Your IT/Sysadmins Need to Do - Security News - Trend Micro USA
+</a><br><a href=https://www.veracode.com/blog/security-news/wannacry-ransomware-attack-symptom-bigger-problem>WannaCry Ransomware Attack Is a Symptom of a Much Bigger Problem | Veracode Blog</a><br><a href=https://www.theregister.co.uk/2017/05/20/wannacry_windows_xp/>Wannacry: Everything you still need to know because there were so many unanswered Qs • The Register    </a><br><a href=https://www.bloomberg.com/news/articles/2017-07-06/surfer-who-saved-world-from-wannacry-attack-girds-for-next-wave>Surfer Who Saved the World from WannaCry Gets Ready for the Next Big Virus - Bloomberg</a><br><a href=http://www.independent.co.uk/life-style/gadgets-and-tech/news/hack-cyber-attack-ukraine-russia-wannacry-petya-security-internet-broken-computer-not-working-a7810626.html>Huge 'Petya' cyber attack spreading across the world in potential repeat of 'Wannacry' hack | The Independent</a><br><a href=https://www.cnet.com/news/wannacry-wannacrypt-uiwix-ransomware-everything-you-need-to-know/>WannaCry ransomware: Everything you need to know - CNET</a><br><a href=https://www.vox.com/new-money/2017/5/15/15641196/wannacry-ransomware-windows-xp>The WannaCry ransomware attack was temporarily halted. But it’s not over yet. - Voxclockmenumore-arrow</a><br><a href=http://bgr.com/2017/05/15/wanna-cry-ransomware-virus-windows-wannacry-explainer/>WannaCry: Everything you need to know about the global ransomware attack – BGR</a><br><a href=https://www.schneier.com/blog/archives/2017/05/wannacry_ransom.html>WannaCry Ransomware - Schneier on Security</a><br><a href=https://www.intego.com/mac-security-blog/wannacry-and-the-state-of-mac-ransomware/>WannaCry and the State of Mac Ransomware | The Mac Security Blog</a><br><a href=http://www.iobit.com/en/tips-how-to-prevent-wannacry-attacks-80.php>How to Prevent WannaCry Attacks</a><br><a href=http://www.telegraph.co.uk/technology/0/ransomware-does-work/>What is WannaCry and how does ransomware work?</a><br><a href=http://www.independent.co.uk/life-style/gadgets-and-tech/news/nhs-hack-cyber-attack-wannacry-world-global-ukraine-russia-rosneft-maersk-a7810656.html>Global cyber attack is a new version of the 'Wannacry' virus that took down the NHS, Ukrainian official says | The Independent</a><br><a href=http://www.rms.com/blog/2017/05/17/implications-of-the-wannacry-cyber-attack-for-insurance/>Implications of the WannaCry Cyber-Attack for Insurance | The RMS Blog</a><br><a href=http://malware.wikia.com/wiki/WannaCry>WannaCry | Malware Wiki | FANDOM powered by Wikia</a><br><a href=https://www.avg.com/en/signal/wannacry-ransomware-what-you-need-to-know>WannaCry ransomware: what you need to knowFacebookTwitter</a><br><a href=https://blog.avast.com/ransomware-that-infected-telefonica-and-nhs-hospitals-is-spreading-aggressively-with-over-50000-attacks-so-far-today>WannaCry ransomware that infected Telefonica and NHS hospitals is spreading aggressively, with over 50,000 attacks so far today</a><br><a href=https://www.imore.com/wannacry>'WannaCry' ransomware attack: What you need to know | iMore</a><br><a href=https://www.wired.com/story/petya-ransomware-wannacry-mistakes/>Petya Ransomware Hackers Didn't Make WannaCry's Mistakes | WIRED</a><br><a href=http://www.aljazeera.com/news/2017/05/ransomware-avoid-170513041345145.html>WannaCry: What is ransomware and how to avoid it |  News | Al Jazeera</a><br><a href=https://www.beyondtrust.com/blog/wannacry-ransomware-attack-explained-makes-me-wanna-cry/>WannaCry Ransomware Attack Explained - Makes Me Wanna Cry... - BeyondTrust</a><br><a href=https://www.theverge.com/2017/6/14/15805346/wannacry-north-korea-linked-by-nsa>The NSA reportedly believes North Korea was responsible for WannaCry ransomware attacks - The Vergeclockmenumore-arrow</a><br><a href=http://www.itweb.co.za/?tag=WannaCry>WannaCry News Archive | ITWeb</a><br><a href=https://qz.com/1016525/the-petya-ransomware-cyberattack-has-earned-hackers-20k-less-than-wannacry-in-its-first-24-hours/>The Petya ransomware cyberattack has earned hackers $20k less than WannaCry in its first 24 hours — Quartz</a><br><a href=https://www.fireeye.com/products/hx-endpoint-security-products/wannacry-endpoint-security-demo.html>WannaCry Endpoint Security Demo | FireEye</a><br><a href=http://www.npr.org/sections/thetwo-way/2017/05/15/528451534/wannacry-ransomware-what-we-know-monday>WannaCry Ransomware: What We Know Monday : The Two-Way : NPR</a><br><a href=http://www.darkreading.com/attacks-breaches/wannacry-rapidly-moving-ransomware-attack-spreads-to-74-countries/d/d-id/1328874>'WannaCry' Rapidly Moving Ransomware Attack Spreads ...</a><br></div>
+	  </div>
+	</div>
+	
+      </div> 
+      
+      
+      <h2>References</h2>
+      <div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company0">0. Symantec (17 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company0" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://knowledge.wharton.upenn.edu/article/massive-global-cyberattack/>How the WannaCry Attack Will Impact Cyber Security - Knowledge@Wharton</a><br><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=http://www.nbcnews.com/storyline/hacking-of-america/blockbuster-wannacry-malware-could-just-be-getting-started-experts-n759356>'WannaCry' Malware Attack Could Just Be Getting Started: Experts - NBC News</a><br><a href=http://www.news24.com/Tags/Topics/wannacry>
+	wannacry on News24
+</a><br><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br><a href=http://www.fin24.com/Tech/News/cybersleuths-unearth-more-clues-on-wannacry-origin-20170523>
+	Cybersleuths unearth more clues on WannaCry origin | Fin24
+</a><br><a href=https://developers.redhat.com/blog/2017/05/19/wannacry-ransomware-who-it-affected-and-why-it-matters/>WannaCry Ransomware: Who It Affected and Why It Matters – RHD Blog</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://fortune.com/2017/05/23/north-korea-wannacry-ransomware-symantec/>Experts: 'Highly Likely' North Korea Behind WannaCry Ransomware Attack | Fortune.com</a><br><a href=https://www.ahsay.com/blog/2017/05/22/7-facts-about-wannacry-ransomware/>7 Facts about WannaCry ransomware – Ahsay's Blog</a><br><a href=https://support.norton.com/sp/en/ie/home/current/solutions/v122151116_EndUserProfile_en_us>What is WannaCry ransomware and how to protect your computer?</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=https://www.troyhunt.com/everything-you-need-to-know-about-the-wannacrypt-ransomware/>Troy Hunt: Everything you need to know about the WannaCry / Wcry / WannaCrypt ransomware</a><br><a href=https://www.cnet.com/news/wannacry-wannacrypt-uiwix-ransomware-everything-you-need-to-know/>WannaCry ransomware: Everything you need to know - CNET</a><br><a href=http://bgr.com/2017/05/15/wanna-cry-ransomware-virus-windows-wannacry-explainer/>WannaCry: Everything you need to know about the global ransomware attack – BGR</a><br><a href=http://www.aljazeera.com/news/2017/05/ransomware-avoid-170513041345145.html>WannaCry: What is ransomware and how to avoid it |  News | Al Jazeera</a><br><a href=https://www.theverge.com/2017/6/14/15805346/wannacry-north-korea-linked-by-nsa>The NSA reportedly believes North Korea was responsible for WannaCry ransomware attacks - The Vergeclockmenumore-arrow</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company1">1. Kaspersky (17 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company1" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://knowledge.wharton.upenn.edu/article/massive-global-cyberattack/>How the WannaCry Attack Will Impact Cyber Security - Knowledge@Wharton</a><br><a href=https://securelist.com/blog/incidents/78351/wannacry-ransomware-used-in-widespread-attacks-all-over-the-world/>WannaCry ransomware used in widespread attacks all over the world - Securelist</a><br><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=http://www.nbcnews.com/storyline/hacking-of-america/blockbuster-wannacry-malware-could-just-be-getting-started-experts-n759356>'WannaCry' Malware Attack Could Just Be Getting Started: Experts - NBC News</a><br><a href=http://www.news24.com/Tags/Topics/wannacry>
+	wannacry on News24
+</a><br><a href=https://www.forbes.com/sites/thomasbrewster/2017/06/27/petya-notpetya-ransomware-is-more-powerful-than-wannacry/>Petya Or NotPetya: Why The Latest Ransomware Is Deadlier Than WannaCry</a><br><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://fortune.com/2017/05/23/north-korea-wannacry-ransomware-symantec/>Experts: 'Highly Likely' North Korea Behind WannaCry Ransomware Attack | Fortune.com</a><br><a href=https://www.ahsay.com/blog/2017/05/22/7-facts-about-wannacry-ransomware/>7 Facts about WannaCry ransomware – Ahsay's Blog</a><br><a href=https://blog.comae.io/wannacry-new-variants-detected-b8908fefea7e>WannaCry — New Variants Detected! – Comae Technologies</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=https://www.troyhunt.com/everything-you-need-to-know-about-the-wannacrypt-ransomware/>Troy Hunt: Everything you need to know about the WannaCry / Wcry / WannaCrypt ransomware</a><br><a href=http://www.aljazeera.com/news/2017/05/ransomware-avoid-170513041345145.html>WannaCry: What is ransomware and how to avoid it |  News | Al Jazeera</a><br><a href=https://www.theverge.com/2017/6/14/15805346/wannacry-north-korea-linked-by-nsa>The NSA reportedly believes North Korea was responsible for WannaCry ransomware attacks - The Vergeclockmenumore-arrow</a><br><a href=http://www.darkreading.com/attacks-breaches/wannacry-rapidly-moving-ransomware-attack-spreads-to-74-countries/d/d-id/1328874>'WannaCry' Rapidly Moving Ransomware Attack Spreads ...</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company2">2. RSA (9 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company2" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=https://www.us-cert.gov/ncas/alerts/TA17-132A>Indicators Associated With WannaCry Ransomware</a><br><a href=https://developers.redhat.com/blog/2017/05/19/wannacry-ransomware-who-it-affected-and-why-it-matters/>WannaCry Ransomware: Who It Affected and Why It Matters – RHD Blog</a><br><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=https://www.troyhunt.com/everything-you-need-to-know-about-the-wannacrypt-ransomware/>Troy Hunt: Everything you need to know about the WannaCry / Wcry / WannaCrypt ransomware</a><br><a href=https://securityintelligence.com/lessons-learned-from-the-wannacry-ransomware-attack-and-many-others-that-preceded-it/>Lessons Learned From the WannaCry Ransomware Attack and Many Others That Preceded It</a><br><a href=http://malware.wikia.com/wiki/WannaCry>WannaCry | Malware Wiki | FANDOM powered by Wikia</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company3">3. Malwarebytes (6 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company3" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.recordedfuture.com/wannacry-ransomware-analysis/>What Is WannaCry? Analyzing the Global Ransomware Attack</a><br><a href=https://securingtomorrow.mcafee.com/executive-perspectives/analysis-wannacry-ransomware-outbreak/>An Analysis of the WannaCry Ransomware Outbreak | McAfee Blogs</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=https://www.wordfence.com/blog/2017/05/how-to-protect-yourself-against-wannacry/>New WannaCry Ransomware and How to Protect Yourself</a><br><a href=https://www.theregister.co.uk/2017/05/20/wannacry_windows_xp/>Wannacry: Everything you still need to know because there were so many unanswered Qs • The Register    </a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company4">4. Avast (5 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company4" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.forbes.com/sites/thomasbrewster/2017/06/27/petya-notpetya-ransomware-is-more-powerful-than-wannacry/>Petya Or NotPetya: Why The Latest Ransomware Is Deadlier Than WannaCry</a><br><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br><a href=http://www.aljazeera.com/news/2017/05/ransomware-avoid-170513041345145.html>WannaCry: What is ransomware and how to avoid it |  News | Al Jazeera</a><br><a href=http://www.darkreading.com/attacks-breaches/wannacry-rapidly-moving-ransomware-attack-spreads-to-74-countries/d/d-id/1328874>'WannaCry' Rapidly Moving Ransomware Attack Spreads ...</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company5">5. IBM (4 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company5" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br><a href=https://securityintelligence.com/lessons-learned-from-the-wannacry-ransomware-attack-and-many-others-that-preceded-it/>Lessons Learned From the WannaCry Ransomware Attack and Many Others That Preceded It</a><br><a href=https://www.schneier.com/blog/archives/2017/05/wannacry_ransom.html>WannaCry Ransomware - Schneier on Security</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company6">6. AlienVault (4 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company6" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.networkworld.com/article/3198985/malware-cybercrime/nothing-new-to-wannacry-about.html>Nothing new to (Wanna)Cry about | Network World</a><br><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=https://www.recordedfuture.com/wannacry-ransomware-analysis/>What Is WannaCry? Analyzing the Global Ransomware Attack</a><br><a href=http://www.npr.org/sections/thetwo-way/2017/05/15/528451534/wannacry-ransomware-what-we-know-monday>WannaCry Ransomware: What We Know Monday : The Two-Way : NPR</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company7">7. FireEye (4 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company7" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.news24.com/Tags/Topics/wannacry>
+	wannacry on News24
+</a><br><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br><a href=http://www.bbc.com/news/technology-39920141>WannaCry ransomware cyber-attacks slow but fears remain - BBC NewsBBC News</a><br><a href=http://www.fin24.com/Tech/News/cybersleuths-unearth-more-clues-on-wannacry-origin-20170523>
+	Cybersleuths unearth more clues on WannaCry origin | Fin24
+</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company8">8. Bitdefender (4 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company8" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br><a href=https://www.citrix.com/blogs/2017/05/16/wannacry-why-citrix-customers-are-not-crying-today/>WannaCry: Why Citrix Customers Are Not Crying Today | Citrix Blogs</a><br><a href=http://www.independent.co.uk/life-style/gadgets-and-tech/news/hack-cyber-attack-ukraine-russia-wannacry-petya-security-internet-broken-computer-not-working-a7810626.html>Huge 'Petya' cyber attack spreading across the world in potential repeat of 'Wannacry' hack | The Independent</a><br><a href=https://www.wired.com/story/petya-ransomware-wannacry-mistakes/>Petya Ransomware Hackers Didn't Make WannaCry's Mistakes | WIRED</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company9">9. Cisco (4 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company9" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br><a href=http://blog.talosintelligence.com/2017/05/wannacry.html>Cisco's Talos Intelligence Group Blog: Player 3 Has Entered the Game: Say Hello to 'WannaCry'</a><br><a href=https://www.theregister.co.uk/2017/05/20/wannacry_windows_xp/>Wannacry: Everything you still need to know because there were so many unanswered Qs • The Register    </a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company10">10. Proofpoint (3 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company10" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.nbcnews.com/storyline/hacking-of-america/blockbuster-wannacry-malware-could-just-be-getting-started-experts-n759356>'WannaCry' Malware Attack Could Just Be Getting Started: Experts - NBC News</a><br><a href=https://www.technologyreview.com/s/607895/wannacry-has-a-more-lucrative-cousin-that-mines-cryptocurrency-for-its-masters/>WannaCry Has a More Lucrative Cousin That Mines Cryptocurrency for Its Masters - MIT Technology Review</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company11">11. ESET (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company11" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.forbes.com/sites/thomasbrewster/2017/06/27/petya-notpetya-ransomware-is-more-powerful-than-wannacry/>Petya Or NotPetya: Why The Latest Ransomware Is Deadlier Than WannaCry</a><br><a href=http://www.zdnet.com/article/wannacry-why-its-ransomware-that-just-wont-die/>WannaCry: Why this ransomware just won't die | ZDNet</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company12">12. Anomali (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company12" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company13">13. SecureWorks (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company13" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.theguardian.com/technology/2017/jun/16/wannacry-ransomware-attack-linked-north-korea-lazarus-group>WannaCry ransomware attack 'linked to North Korea' | Technology | The Guardian</a><br><a href=http://www.zdnet.com/article/wannacry-why-its-ransomware-that-just-wont-die/>WannaCry: Why this ransomware just won't die | ZDNet</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company14">14. Lookout (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company14" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.pcmag.com/article/353670/wannacry-ransomware-what-you-need-to-know>WannaCry Ransomware: What You Need to Know | PCMag.comPCMagLogo.2016Nav_AssetsArrow_Path</a><br><a href=https://www.gdatasoftware.com/blog/2017/05/29751-wannacry-ransomware-campaign>Warning: Massive "WannaCry" Ransomware campaign launched | G DATA</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company15">15. Oracle (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company15" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company16">16. Digital Shadows (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company16" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.bbc.com/news/technology-39920141>WannaCry ransomware cyber-attacks slow but fears remain - BBC NewsBBC News</a><br><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company17">17. Qihoo 360 (2 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company17" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br><a href=http://www.nbcnews.com/storyline/hacking-of-america/blockbuster-wannacry-malware-could-just-be-getting-started-experts-n759356>'WannaCry' Malware Attack Could Just Be Getting Started: Experts - NBC News</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company18">18. Avanan (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company18" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.citrix.com/blogs/2017/05/16/wannacry-why-citrix-customers-are-not-crying-today/>WannaCry: Why Citrix Customers Are Not Crying Today | Citrix Blogs</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company19">19. F-Secure (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company19" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.bankinfosecurity.com/blogs/teardown-wannacry-ransomware-p-2476>Teardown: WannaCry Ransomware - BankInfoSecurity</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company20">20. Juniper Networks (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company20" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://forums.juniper.net/t5/Security-Now/Rapid-Response-The-WannaCry-Ransomware-Outbreak/ba-p/307835>Rapid Response: WannaCry Ransomware Outbreak | Juniper Networks</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company21">21. Bromium (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company21" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.darkreading.com/attacks-breaches/wannacry-rapidly-moving-ransomware-attack-spreads-to-74-countries/d/d-id/1328874>'WannaCry' Rapidly Moving Ransomware Attack Spreads ...</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company22">22. Tenable Network Security (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company22" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.tenable.com/wannacry>WannaCry | Tenable™FacebookGoogle PlusTwitterLinkedInYouTubeRSSMenuSearch</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company23">23. Comodo (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company23" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.schneier.com/blog/archives/2017/05/wannacry_ransom.html>WannaCry Ransomware - Schneier on Security</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company24">24. BitSight (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company24" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.wired.co.uk/article/wannacry-ransomware-virus-patch>WannaCry ransomware: what is the WannaCry virus? | WIRED UKUntitled-1Untitled-1</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company25">25. Check Point Software (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company25" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.theglobeandmail.com/technology/wannacry-ransomware-protection-explainer/article35004214/>WannaCry: How to protect yourself, what’s happened so far​ and what could happen next - The Globe and Mail</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company26">26. Recorded Future (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company26" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.theguardian.com/technology/2017/jun/16/wannacry-ransomware-attack-linked-north-korea-lazarus-group>WannaCry ransomware attack 'linked to North Korea' | Technology | The Guardian</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company27">27. Infoblox (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company27" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company28">28. Ivanti (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company28" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://www.mirror.co.uk/tech/what-wanna-decryptor-look-ransomware-10410236>What is 'Wanna Decryptor'? A look at the ransomware that brought down the NHS - Mirror Online</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company29">29. Trend Micro (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company29" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=http://ewn.co.za/2017/05/23/wannacry-caused-panic-but-didn-t-make-much-money-why>WannaCry caused panic, but didn't make much money. Why?</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company30">30. Varonis (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company30" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://www.troyhunt.com/everything-you-need-to-know-about-the-wannacrypt-ransomware/>Troy Hunt: Everything you need to know about the WannaCry / Wcry / WannaCrypt ransomware</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company31">31. Citrix (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company31" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://gist.github.com/rain-1/989428fa5504f378b993ee6efbc0b168>Wannacrypt0r-FACTSHEET.md · GitHub</a><br></div>
+	  </div>
+	</div><div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company32">32. Cyence (1 references)</a>
+	    </h4>
+	  </div>
+	  <div id="company32" class="panel-collapse collapse">
+	    <div class="panel-body"><a href=https://en.wikipedia.org/wiki/WannaCry_ransomware_attack>WannaCry ransomware attack - Wikipedia</a><br></div>
+	  </div>
+	</div>
+      </div>
+	
+      </div> 
+      
+      
+      
+    </div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

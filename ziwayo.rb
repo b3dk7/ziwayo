@@ -211,6 +211,7 @@ def create_html(csv)
   ##matrix.each { |x| all_articles << x[0] }
   
   
+  article_hash = {}
   html_dir = matrix[0][0]
   Dir.foreach(html_dir) do |item|
     next if item == '.' or item == '..'
@@ -221,7 +222,13 @@ def create_html(csv)
     link = article.read.lines.first.gsub('<!--','').gsub('-->','').gsub("\n",'')
     article_noko = Nokogiri::HTML(open(article))
     
-    all_articles << '<a href='+link + '>'+article_noko.css('title').text+'</a><br>'
+    article_title = article_noko.css('title').text
+    all_articles << '<a href='+link + '>'+article_title+'</a><br>'
+    
+    article_hash[link] = [article_title,item_location]
+    
+    
+    
   end
   
   
@@ -230,14 +237,19 @@ def create_html(csv)
   
   
   for i in 0...company_array.size
+    
+    articles_string = ''
+    company_array[i][1].each { |x| articles_string << '<a href='+x+'>'+article_hash[x][0]+'</a><br>' }
+    
+    
     ziwayo_references << '<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <h4 class="panel-title">
-	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">'+i.to_s+'. '+company_array[i][0]+' ('+company_array[i][1].size.to_s+' references)</a>
+	      <a data-toggle="collapse" data-parent="#accordion" href="#company'+i.to_s+'">'+i.to_s+'. '+company_array[i][0]+' ('+company_array[i][1].size.to_s+' references)</a>
 	    </h4>
 	  </div>
-	  <div id="collapse7" class="panel-collapse collapse">
-	    <div class="panel-body">xxx</div>
+	  <div id="company'+i.to_s+'" class="panel-collapse collapse">
+	    <div class="panel-body">'+articles_string+'</div>
 	  </div>
 	</div>'
   end
@@ -312,6 +324,17 @@ else
   help()
 end
 
+=begin
 
+To show you the most relevant results, we have omitted some entries very similar to the search results already displayed.
+If you like, you can repeat the search with the omitted results included.
+
+
+https://www.startpage.com/do/search?cmd=process_search&query=fish&language=english&cat=web&dgf=1&pl=&ff=&t=air
+
+https://www.startpage.com/do/search?cmd=process_search&query=fish&language=english&cat=web&dgf=1&pl=&ff=&t=air
+
+https://s3-eu1.startpage.com/do/search?cmd=process_search&language=english&qid=MGLPKLSOMKQL558IVTGUE&rcount=2&rl=NONE&abp=1&t=air&query=fish&cat=web&dgf=1&startat=140
+=end
 
 
